@@ -21,7 +21,7 @@ class Library:
         print("Book has been added to the book list")
 
     def returnBook(self, book):
-        self.booklist.remove(book)
+        self.lendDict.pop(book)
 
 
 if __name__ == "__main__":
@@ -38,22 +38,22 @@ if __name__ == "__main__":
         print("2. lend a book")
         print("3. add a book")
         print("4. return a book")
-        user_choice = int(input("Enter Your Choive "))
-        if user_choice == 1:
+        user_choice = input("Enter Your Choive ")
+        if user_choice == "1":
             vikram.displayBooks()
-        elif user_choice == 2:
+        elif user_choice == "2":
             book = input("Enter the name of the book you want to lend : ")
             user = input("Enter your name")
             vikram.lendBook(user, book)
-        elif user_choice == 3:
+        elif user_choice == "3":
             book = input("Enter the name of the book you wan tto add")
             vikram.addBook(book)
-        elif user_choice == 4:
+        elif user_choice == "4":
             book = input("Enter the name of the book you wan tto retrunt")
             vikram.returnBook(book)
         else:
             print("Not a Valid option")
-            print("press q to quit and c to continue \n")
+        print("press q to quit and c to continue")
         user_choice2 = ""
         while(user_choice2 != "c" and user_choice2 != "q"):
             user_choice2 = input()
