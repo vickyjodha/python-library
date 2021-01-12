@@ -39,16 +39,24 @@ if __name__ == "__main__":
         print("3. add a book")
         print("4. return a book")
         user_choice = input("Enter Your Choive ")
-        if user_choice == "1":
+        if user_choice not in ['1', '2', '3', '4', 'exit', 'q']:
+            print("Please Enter your valide number")
+            continue
+        elif user_choice in ['exit', 'q']:
+            exit()
+        else:
+            user_choice = int(user_choice)
+
+        if user_choice == 1:
             vikram.displayBooks()
-        elif user_choice == "2":
+        elif user_choice == 2:
             book = input("Enter the name of the book you want to lend : ")
             user = input("Enter your name")
             vikram.lendBook(user, book)
-        elif user_choice == "3":
+        elif user_choice == 3:
             book = input("Enter the name of the book you wan tto add")
             vikram.addBook(book)
-        elif user_choice == "4":
+        elif user_choice == 4:
             book = input("Enter the name of the book you wan tto retrunt")
             vikram.returnBook(book)
         else:
